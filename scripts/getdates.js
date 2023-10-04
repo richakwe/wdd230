@@ -10,3 +10,4 @@ const formattedLastModified = 'Last Modified:' + lastModified.toLocaleDateString
 
 // Display the formatted last modified date in the HTML element
 document.getElementById('lastmodified').textContent = formattedLastModified;
+var lastModificationDate=document.lastModified;
