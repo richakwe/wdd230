@@ -154,3 +154,16 @@ footer {
 h4 {
     display: none;
 }
+.hero img {
+    object-fit: cover;
+    width: 800px;
+    height: 500px;
+    margin-right: auto;
+    margin-left: auto;
+    display: block;
+  }
+  .herolabel {
+    top: 16%;
+    left: 9%;
+    padding: 1.5rem;
+}

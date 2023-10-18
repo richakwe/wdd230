@@ -511,6 +511,8 @@ figcaption {
 
 .hero img {
   object-fit: cover;
+  width: 555px;
+  height: auto;
 }
 
 .banner {
