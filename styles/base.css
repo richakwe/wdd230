@@ -154,16 +154,21 @@ footer {
 h4 {
     display: none;
 }
+.hero h2{
+    position: absolute;
+    top: 250px;
+    right: 0;
+    font-family: 'Comfortaa', 'Shadows Into Light', sans-serif; 
+	color: hsl(0, 7%, 95%);
+    background-color: #0c8ede;
+    margin-top: 15px;
+    margin-right: 15px;
+    padding: 10px;
+    border: solid #060204;
+    opacity: 50%;
+
+}
 .hero img {
-    object-fit: cover;
-    width: 800px;
-    height: 500px;
-    margin-right: auto;
-    margin-left: auto;
-    display: block;
-  }
-  .herolabel {
-    top: 16%;
-    left: 9%;
-    padding: 1.5rem;
+    width: 100%;
+    height: auto;
 }
