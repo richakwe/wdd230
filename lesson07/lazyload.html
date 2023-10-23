@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="W07 Lazy Loading - Richard Kwenda" content="Lazy Loading of Images">
+          <title>Design Principles | Richard Kwenda WDD230 | W07 Lazy Loading</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+        <link rel="stylesheet" href="styles/style.css">
+    </head>
+    <body>
+        <header>
+		    <h1>Progressive Loading of Images</h1>
+        </header>
+        <main>
+        <picture>
+            <img src='images/placeholder.png' data-src="images/chilojo.jpg" alt="Chilojo" />
+        </picture>
+        <picture>
+            <img src='images/placeholder.png' data-src="images/kariba.jpg" alt="kariba">
+        </picture>
+        <picture>
+            <img src='images/placeholder.png' data-src="images/matusadona.jpg" alt="matusadona">
+        </picture>
+        <picture><img src='images/placeholder.png' data-src="images/nyanga.jpg" alt="nyanga">
+        </picture>
+        <picture>
+            <img src='images/placeholder.png' data-src="images/mutarazi.jpg" alt="mutarazi">
+        </picture>
+        <picture>
+            <img src='images/placeholder.png' data-src="images/victoria.jpg" alt="victoria">
+        </picture>
+        </main>
+        <footer>
+            &copy; <span id="copyright"></span> | Richard Kwenda | Last Updated: <span id="lastmodified"></span>
+        </footer>
+          <script src="scripts/script.js"></script> 
+          <script src="scripts/lazy.js"></script>   
+    </body>
+</html>

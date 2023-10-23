@@ -77,7 +77,7 @@ footer {
 }
 
 header {
-  background-color: blue;
+  background-color: var(--primary-color);
   color: var(--headline-color-on-color);
   display: grid;
   grid-template-columns: 5fr 1fr 1fr;
@@ -95,7 +95,7 @@ header div {
 }
 
 header div #datetime {
-  background-color: rgba(240, 136, 62, 0.3);
+  background-color: rgba(0, 0, 0, 0.3);
   color: #fff;
   padding: 6px;
   width: 100%;
@@ -513,7 +513,6 @@ figcaption {
   object-fit: cover;
   width: 555px;
   height: 90%;
-  
 }
 
 .banner {
@@ -911,4 +910,10 @@ div.board figure picture img {
 
 .discovertext {
   line-height: 25px;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--paragraph-font);
 }
