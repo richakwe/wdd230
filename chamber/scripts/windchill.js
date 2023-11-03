@@ -1,56 +1,67 @@
-//Script for Windchill in Celcius
-const temp = parseFloat(document.querySelector("#temp").textContent);
-const speed = parseFloat(document.querySelector("#speed").textContent);
-const f = 13.12 + 0.6215 * temp - 11.37 * speed ** 0.16 + 0.3965 * temp * speed ** 0.16
-if (temp <= 10 && speed > 4.8) {
-windchill= f.toFixed(1);
+// Assume placeholder values are Celsius and KPH !!
+function CelsiusToFarenheit (tempCelsius) {
+    let farenheit = (tempCelsius * 9 / 5) + 32;
+    return farenheit;
 }
-else {
-    windchill = "NA";
+function CalculateWindChill (t, s) {
+    let windChill = 35.74 + 0.6215 * t - 35.75 * (s ** 0.16) + 0.4275 * t * (s ** 0.16);
+    return windChill;
 }
-document.getElementById("windchill").innerHTML = windchill;
-
-
-
-date = new Date(Date.now());
-document.querySelector('#©').textContent = date.getFullYear();
-
-const opciones = 
-{ weekday: 'long', 
-year: 'numeric', 
-month: 'numeric', 
-day: 'numeric' };
-
-document.querySelector('#dateMod').textContent = 
-new Date(Date.now()).toLocaleString();
-
-const opciones2 = 
-{ weekday: 'long', 
-year: 'numeric', 
-month: 'long', 
-day: 'numeric' };
-
-
-document.querySelector('#datetime').textContent = 
-new Date(Date.now()).toLocaleString('en-UK',opciones2);
-
-function toggleMenu() {
-    document.getElementById('primaryNav').classList.toggle('open');
-    document.getElementById('hamburguerBtn').classList.toggle('open');
+function ConvertKPHToMPH (kph) {
+    let mph = kph * 0.621371;
+    return mph;
+}
+function ConvertMeterPerSecondToKPH (mps) {
+    let kph = mps * 3600 / 1000;
+    return kph;
 }
 
-const x = document.getElementById('hamburguerBtn');
+document.querySelector('#tempValue').innerHTML = `10`;
+document.querySelector('#windspeedValue').innerHTML = `5`;
+document.querySelector('#windChillValue').innerHTML = "N/A";
 
-x.onclick = toggleMenu;
+const currentTemp = document.querySelector('#tempValue');
+const weatherIcon = document.querySelector('#weather-icon');
+const captionDesc = document.querySelector('p.weatherDescription');
+const windSpeedElement = document.querySelector('#windspeedValue');
 
-article = document.querySelector('#message');
+const url = 'https://api.openweathermap.org/data/2.5/weather?q=Makati&units=metric&appid=db9906a97dca16acb8595cd219ca129b';
 
-weekday = date.getDay();
-
-/* Banner */
-
-if (weekday === 1 || weekday === 2){
-    article.textContent = "🤝🏼 Come join us for the chamber meet and greet Wednesday at 7:00 p.m.";
-    article.setAttribute('class', 'banner-message');
+async function apiFetch() {
+    try {
+        const response = await fetch(url);
+        if (response.ok) {
+            const data = await response.json();
+            // console.log(data);
+            displayResults(data);
+        } else {
+            throw Error(await response.text());
+        }
+    } catch (error) {
+        console.log(error);
+    }
 }
 
+apiFetch();
+
+function displayResults(weatherData) {
+    currentTemp.innerHTML = `<strong>${weatherData.main.temp.toFixed(1)}</strong>`; 
+
+    const iconsrc = `https://openweathermap.org/img/wn/${weatherData.weather[0].icon}@2x.png`;
+    const desc = weatherData.weather[0].description;
+
+    weatherIcon.setAttribute('src', iconsrc);
+    weatherIcon.setAttribute('alt', desc);
+    captionDesc.textContent = desc;
+
+    const windSpeedKPH = ConvertMeterPerSecondToKPH(weatherData.wind.speed).toFixed(1);
+    windSpeedElement.innerHTML = `${windSpeedKPH}`;
+
+    const tempFarenheit = CelsiusToFarenheit(weatherData.main.temp);
+    const windSpeedMPH = ConvertKPHToMPH(windSpeedKPH);
+
+    if (tempFarenheit <= 50 && windSpeedMPH > 3) {
+        let f = CalculateWindChill(tempFarenheit, windSpeedMPH);
+        document.querySelector('#windChillValue').innerHTML = f.toFixed(2);
+    }
+}

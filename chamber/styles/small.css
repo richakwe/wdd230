@@ -680,7 +680,7 @@ legend {
 
 /* Last Visit Assignment */
 
-.last-visit {
+.visit {
   grid-column: 1/4;
   max-width: 1200px;
   width: 100%;
@@ -916,4 +916,15 @@ div.board figure picture img {
   padding: 0;
   box-sizing: border-box;
   font-family: var(--paragraph-font);
+}
+.visits {
+  background-color: #c17a17;
+  padding: 8px;
+  margin-bottom: 10px;
+  
+}
+
+.visits p {
+  color: white;
+  text-align: center;
 }
