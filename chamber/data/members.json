@@ -5,70 +5,70 @@
             "address": "123 Main Street, Gweru",
             "phone": "054-555-1234",
             "website": "https://www.abccompany.com/",
-            "images": "images/keller-williams-logo.webp"
+            "images": "images/logo1.jpg"
         },
         {
             "name": "XYZ Corporation",
             "address": "456 Robert Mugabe Avenue, Gweru",
             "phone": "054-555-5678",
             "website": "https://www.xyzcorp.com/",
-            "images": "images/pnpa.webp"
+            "images": "images/logo2.jpg"
         },
         {
             "name": "PQR Industries",
             "address": "7 Old Trafford, Gweru",
             "phone": "054-555-9012",
             "website": "https://www.pqri.com/",
-            "images": "images/riddleslogo.webp"
+            "images": "images/logo3.jpg"
         },
         {
             "name": "LMN Enterprises",
             "address": "23 Industrial Way, Gweru",
             "phone": "054-555-3456",
             "website": "https://www.lmnenterprises.com/",
-            "images": "images/helpful-village.webp"
+            "images": "images/logo4.jpg"
         },
         {
             "name": "DEF Corporation.",
             "address": "6 Msasa Avenue, Gweru",
             "phone": "054-555-7890",
             "website": "https://www.defcorp.com/",
-            "images": "images/navigate-logo.webp"
+            "images": "images/logo5.jpg"
         },
         {
             "name": "GFI Solutions",
             "address": "9 Maputo Street, Gweru",
             "phone": "054-555-2645",
             "website": "https://www.ghisolutions.com/",
-            "images": "images/pure-west.webp"
+            "images": "images/logo6.jpg"
         },
         {
             "name": "JKL Industries",
             "address": "4 Park Lane, Gweru",
             "phone": "054-555-6789",
             "website": "https://www.jklindustries.com/",
-            "images": "images/hrblock.webp"
+            "images": "images/logo7.jpg"
         },
         {
             "name": "MNO Enterprises",
             "address": "7 Shamrock Street, Gweru",
             "phone": "054-555-6789",
             "website": "https://www.mnoenterprises.com/",
-            "images": "images/flathead-beacon.webp"
+            "images": "images/logo8.jpg"
         },
         {
             "name": "RST Corporation",
             "address": "12 Gomo Avenue, Gweru",
             "phone": "054-555-4567",
             "website": "https://www.rstcorp.com/",
-            "images": "images/express-logo.webp"
+            "images": "images/logo9.jpg"
         },
         {
             "name": "UWV Company",
             "address": "9 Jacaranda Avenue, Gweru",
             "phone": "054-555-8901",
             "website": "http://www.uwvcompany.com/",
-            "images": "images/codesk.webp"
+            "images": "images/logo10.jpg"
         }
     ]
 }

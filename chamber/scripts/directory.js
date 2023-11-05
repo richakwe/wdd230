@@ -1,4 +1,4 @@
-const requestURL = 'https://richakwe.github.io/wdd230/chamber/data/members.json';
+const requestURL = 'json/data.json';
 
 fetch(requestURL)
   .then(function (response) {
@@ -24,7 +24,7 @@ fetch(requestURL)
 
     h2.textContent = `${business.name}`;
   
-    p1.innerHTML = business.address + "<br>Gweru<br>" + business.phone;
+    p1.innerHTML = business.address + "<br>Vancouver, WA 98661<br>" + business.phone;
 
     p2.textContent = business.membership;
 
