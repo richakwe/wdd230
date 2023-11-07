@@ -1,93 +1,52 @@
-const dataURL = 'https://richakwe.github.io/wdd230/chamber/data/members.json';
-const listDiv = document.querySelector('.list-view');
-const cardDiv = document.querySelector('.grid-view');
+const requestURL = 'json/data.json';
+const dataURL = 'https://richakwe.github.io/wdd230/chamber/data/members.json' ;
 
-fetch(dataURL)
-    .then((response) => {
-        return response.json();
-    })
-    .then((jsonObject) => {
-        console.table(jsonObject);
+fetch(requestURL)
+  .then(function (response) {
+    return response.json();
+  })
+  .then(function (jsonObject) { 
+    const businesses = jsonObject['businesses'];
+    businesses.forEach(displayBusinesses);
+  });
 
-        const businesses = jsonObject['businesses'];
-        businesses.forEach(displayBusinessesInGrid);
-        businesses.forEach(displayBusinessesInList);
-    });
 
-    function displayBusinessesInGrid(business) {
+  function displayBusinesses(business) {
+    let card = document.createElement('section');
+    let iconImg = document.createElement('img');
+    let h2 = document.createElement('h2');
+    let p1 = document.createElement('p');
+    let p2 = document.createElement('p');
+    let a = document.createElement('a');
+  
+    iconImg.setAttribute('src', business.imageurl);
+    iconImg.setAttribute('alt', `Icon image for ${business.name}`);
+    iconImg.setAttribute('loading', 'lazy');
 
-        let media_card = document.createElement('section');
-        let h2 = document.createElement('h2');
-        let image = document.createElement('img');
-        let hr = document.createElement('hr');
-        let phone = document.createElement('p');
-        let address = document.createElement('p');
-        let website = document.createElement('a');
+    h2.textContent = `${business.name}`;
+  
+    p1.innerHTML = business.address + "<br>Gweru,<br>" + business.phone;
 
-        h2.textContent = `${business.name}`
-        phone.textContent = `${business.phone}`
-        address.textContent = `${business.address}`
-        website.textContent = `${business.website}`
-        
-        website.setAttribute("href", business.website);
-        image.setAttribute("src", business.images);
-        image.setAttribute("alt", `Image of ${business.name}`);
-        image.setAttribute("loading", "lazy");
-       
-        media_card.appendChild(h2);
-        media_card.appendChild(image);
-        media_card.appendChild(hr);
-        media_card.appendChild(phone);
-        media_card.appendChild(address);
-        media_card.appendChild(website);
-            
-        cardDiv.appendChild(media_card);
-    }
+    p2.textContent = business.membership;
 
-    function displayBusinessesInList(business) {
+    a.textContent = business.website;
+    a.setAttribute('href', '#'); 
+  
+    card.appendChild(iconImg);
+    card.appendChild(h2);
+    card.appendChild(p1);
+    card.appendChild(p2);
+    card.appendChild(a);
+  
+    document.querySelector('.directory-grid').appendChild(card);
+  }
 
-        let media_card = document.createElement('section');
-        let h2 = document.createElement('h2');
-        let phone = document.createElement('p');
-        let address = document.createElement('p');
-        let website = document.createElement('p');
 
-        h2.textContent = business.name
-        phone.textContent = business.phone
-        address.textContent = business.address
-        website.textContent = business.website
-        
-       
-        media_card.appendChild(h2);
-        media_card.appendChild(phone);
-        media_card.appendChild(address);
-        media_card.appendChild(website);
-            
-        listDiv.appendChild(media_card);
-    }
+  const directory = document.querySelector('.directory-grid')
+  const dirpanelbutton = document.querySelector('#panel');
+  const dirlistbutton = document.querySelector('#list');
 
-// Script for Grid and List Views
-let viewsButtons = document.querySelectorAll('.links ul li');
-let views = document.querySelectorAll('.view-div');
 
-viewsButtons.forEach((link) => {
-    link.addEventListener('click', () => {
-        viewsButtons.forEach((item) => {
-            item.classList.remove('active');
-        })
-        link.classList.add('active');
-        
-        let li_view = link.getAttribute('data-view');
+  dirpanelbutton.addEventListener('click', () => {directory.classList.add('panelview')}, false);
+  dirlistbutton.addEventListener('click', () => {directory.classList.remove('panelview')}, false);
 
-        views.forEach((view) => {
-            view.style.display = 'none';
-        })
-        
-        if (li_view == 'grid-view') {
-            document.querySelector('.' + li_view).style.display = 'grid';
-        } else {
-            document.querySelector('.' + li_view).style.display = 'block';
-        }
-    })
-
-})

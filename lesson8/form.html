@@ -1,35 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="W08 Table Build - Richard Kwenda" content="LESSON 8 - Table Build">
-      <title>Design Principles | Richard Kwenda WDD230 | W08 Table Build</title>
-    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
-    <link rel="stylesheet" href="styles/styles.css">
-  </head>
-  <body>
-    <h1>LESSON 8 - Form Build</h1>
-    <form>  
-        <label>Username: </label> <br>  
-        <input type="text"> <br> <br>  
-        <label>Password:</label> <br> 
-        <input type="password">  <br> <br> 
-        <label>Password: </label> <br>
-        <input type="text" id="keyphrase" name="keyphrase" pattern="[a-zA-Z -]{8,}" placeholder="At least eight characters long. No numbers."> <br><br>
-        <label>Email: </label> <br>
-        <input type="text" id="keyphrase" name="keyphrase" pattern="[a-zA-Z -]{6,}" placeholder="Please enter a valid email address."> <br> <br>
-        <label>Page Rating:</label> <br>
-        <input type="text"> <br> <br>  
-        <input type="submit" value="Submit">  
-        </form> 
-      
+    <title>Form</title>
+    <link rel="stylesheet" href="styles/form.css">
+</head>
+<body>
+    <header>
+        <!-- Course home page header -->
+    </header>
+    <nav>
+        <!-- Course home page navigation -->
+    </nav>
+    <main>
+        <form action="record.html" method="get">
+            <div>
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required pattern="[A-Za-z0-9]{8,}">
+            </div>
+            <div>
+                <label for="confirm-password">Confirm Password:</label>
+                <input type="password" id="confirm-password" name="confirm-password" required oninput="checkPassword(this)">
+            </div>
+            <div>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required pattern="[a-zA-Z0-9._%+-]+@byui\.edu$" title="Please enter a valid email address">
+            </div>
+            <div>
+                <label for="rating">Page Rating:</label>
+                <input type="range" id="rating" name="rating" min="1" max="10" step="1" oninput="updateRating(this)">
+                <span id="rating-value">5</span>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+    </main>
+    <footer>
+        <!-- Course home page footer -->
+    </footer>
+    <script>
+        function checkPassword(input) {
+            if (input.value !== document.getElementById('password').value) {
+                input.setCustomValidity('Passwords must match.');
+            } else {
+                input.setCustomValidity('');
+            }
+        }
 
-  <footer> 
-    &copy; <span id="copyright"></span> | Richard Kwenda| Last Updated: <span id="lastmodified"></span>
-  </footer>
-  <script src="scripts/scripts.js"></script> 
+        function updateRating(input) {
+            document.getElementById('rating-value').textContent = input.value;
+        }
+    </script>
 </body>
 </html>

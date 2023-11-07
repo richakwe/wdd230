@@ -1,0 +1,28 @@
+{
+    "family_name": "Kwenda",
+    "date_moved_in": "2023-11-06",
+    "num_people": 4,
+    "visited_by_bishopric": true,
+    "family_members": [
+        {
+            "name": "Richard Kwenda",
+            "gender": "male",
+            "birthdate": "1990-01-01"
+        },
+        {
+            "name": "Fortunate Kwenda",
+            "gender": "female",
+            "birthdate": "1992-02-02"
+        },
+        {
+            "name": "Tinashe Kwenda",
+            "gender": "male",
+            "birthdate": "2015-03-03"
+        },
+        {
+            "name": "Victoria Kwenda",
+            "gender": "female",
+            "birthdate": "2017-04-04"
+        }
+    ]
+}
