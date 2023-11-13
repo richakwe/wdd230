@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenWeatherMap.org API Test - Richard Kwenda - WDD230</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link href="styles/styles.css" rel="stylesheet">
+  </head>
+  <body>
+    <header>
+      <h1>OpenWeatherMap.org API Test</h1>
+    </header>
+
+    <main class="container">
+            <div id="weather-info">
+          <p>The current temperature in Trier, Germany is <strong>8°C</strong></p>
+          <h2>Current Condition</h2>
+          <figure>
+            <img class="weather-img" alt="Weather icon" src="https://openweathermap.org/img/wn/13n@2x.png">
+            <img src="" alt="" id="weather-icon">
+            <figcaption>Over Cast Clouds</figcaption>
+          </figure>
+        </div>
+            <p class="small">Weather data provided by: <a href="http://OpenWeatherMap.org">OpenWeatherMap</a></p>
+          </main>
+
+    <footer>
+      &copy; <span id="copyright"></span> | Richard Kwenda | Last Updated:&nbsp;
+      <span id="lastmodified"></span>
+    </footer>
+    <script src="scripts/script.js"></script>
+    <script src="scripts/weatherapi.js"></script>
+  </body>
+</html>
