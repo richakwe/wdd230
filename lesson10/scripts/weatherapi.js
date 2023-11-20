@@ -1,5 +1,5 @@
-const apiKey = '2d76ab992596dac2ec560715280b2f72';
-const url = `https://api.openweathermap.org/data/2.5/weather?q=Fairbanks&units=imperial&appid=${apiKey}`;
+const apiKey = '2c44643f26fe3e8a1e95b8920455c1f1';
+const url = `https://api.openweathermap.org/data/2.5/weather?q=Trier&units=imperial&appid=${apiKey}`;
 
 // select HTML elements in the document
 //const currentTemp = document.querySelector("#current-temp");
