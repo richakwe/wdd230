@@ -1,0 +1,82 @@
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #610cd0;
+    color: #fff;
+    padding: 10px;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 10px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.contact-info {
+    text-align: right;
+}
+
+.hero {
+    /* Styles for the hero section */
+}
+
+.reservation {
+    /* Styles for the reservation section */
+}
+
+.cta-button {
+    /* Styles for the call to action button */
+}
+
+.weather {
+    /* Styles for the weather section */
+}
+
+#current-weather {
+    /* Styles for the current weather information */
+}
+
+#weather-alert {
+    /* Styles for the weather alert message */
+}
+
+#one-day-forecast {
+    /* Styles for the one-day forecast */
+}
+
+footer {
+    background-color: #610cd0;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+.social-media {
+    list-style-type: none;
+    padding: 0;
+}
+
+.social-media li {
+    display: inline;
+    margin-right: 10px;
+}
+
+.social-media li a {
+    color: #fff;
+    text-decoration: none;
+}
